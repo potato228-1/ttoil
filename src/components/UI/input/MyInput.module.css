@@ -1,0 +1,15 @@
+.myInput{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    border: 1px solid white;
+    font-size: clamp(
+        0.75rem,
+        calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))),
+        1.25rem
+    );
+    font-weight: 400;
+    text-align: center;
+    padding: 1rem;
+}

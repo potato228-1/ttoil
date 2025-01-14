@@ -1,0 +1,55 @@
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.messageField{
+    width: 100%;
+    resize: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    border: 1px solid white;
+    font-size: clamp(
+        0.75rem,
+        calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320))),
+        1.25rem
+    );
+    font-weight: 400;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+    min-height: 100px;
+    position: relative;
+}
+
+.btn{
+    font-size: clamp(
+        0.75rem,
+        calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))),
+        1.25rem
+    );
+    font-weight: 400;
+    padding: 14px 100px;
+    border: 1px solid white;
+    border-radius: 16px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.btn:hover{
+    color: var(--primary-text);
+    background: var(--primary-text2);
+}
+
+@media (max-width: 400px) {
+    .btn{
+        width: 100%;
+        padding: 14px;
+    }
+}

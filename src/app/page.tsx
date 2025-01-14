@@ -1,95 +1,50 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import Feature from "@/components/UI/feature/Feature";
+import { getAbout, getServices } from "@/utils/getFeature";
+import Slider from "@/components/UI/slider/Slider";
+import slides from '@/utils/getSlides'
+import Products from "@/components/Products/Products";
+import productsList from '@/utils/getProducts'
+import Locations from "@/components/Locations/Locations";
+import Contact from "@/components/Contact/Contact";
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+export default function Home() {
+    let feature_about = getAbout()
+    let feature_services = getServices()
+
+	return (
+		<div className={styles.HomePage}>
+			<div className={styles.title_container}>
+				<div className={styles.title_wrapper}>
+					<p className={styles.subtitle}>WHO ARE WE</p>
+
+					<h1 className={styles.mainTitle}>
+						Ultimate Solitions for Your Business Dreams
+					</h1>
+				</div>
+
+				<p className={styles.description}>
+					With access to major suppliers and manufacturers around the
+					globe, Azoil Trading and Commerce Agency trades several of
+					crude oil and refined petroleum products in global energy
+					market. OUR MISSION is to provide first-class quality and
+					services to all our valuable customers and to always be
+					innovative and alert in the marketplace we serve.
+				</p>
+			</div>
+
+            <Feature feature={feature_about} />
+
+            <Slider sliderData={slides()} />
+
+            <Feature feature={feature_services} />
+
+            <Products products={productsList()} />
+
+            <Locations />
+
+            <Contact />
+		</div>
+	);
 }

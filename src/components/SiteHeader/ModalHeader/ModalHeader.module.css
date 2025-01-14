@@ -1,0 +1,79 @@
+.modalHeader{
+    position: fixed;
+    top: -200%;
+    left: 0;
+    right: 0;
+    background: var(--primary-text);
+    transition: top 0.3s;
+}
+
+.active{
+    top: 0;
+    bottom: 0;
+}
+
+.modalHeader_wrapper{
+    background: url('../../../../public/header/modal_bg.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.innerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn{
+    cursor: pointer;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.nav_link{
+    color: var(--primary-text2);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contacts_container{
+    border-top: 1px solid white;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.contacts_link{
+    color: var(--primary-text2);
+    font-size: 0.75rem;
+}
+
+.socialMedia_container{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.socialMedia_icon{
+    width: 24px;
+    height: auto;
+}
+
+@media (min-width: 900px) {
+    .modalHeader{
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+.header{
+    padding: 
+        clamp(20px, calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320))), 28px)
+        clamp(15px, calc(15px + (150 - 15) * ((100vw - 320px) / (1920 - 320))), 150px)
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav_link{
+    color: var(--primary-text);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.logo{
+    width: clamp(69px, calc(69px + (113 - 69) * ((100vw - 320px) / (1920 - 320))), 113px);
+    height: auto;
+}
+
+.menu_btn{
+    background: none;
+    font-size: 0.875rem;
+    gap: 5px;
+    font-weight: 500;
+
+    display: none;
+}
+
+.menu_icon{
+    width: 14px;
+}
+
+@media (max-width: 900px) {
+    .nav_link{
+        display: none;
+    }
+
+    .menu_btn{
+        display: flex;
+    }
+}
