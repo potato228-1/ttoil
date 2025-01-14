@@ -36,7 +36,7 @@ export default function SiteHeader() {
 			</Link>
 
 			<Link href="/" className={styles.nav_link}>
-				ENGLISH
+				LANGUAGE
 			</Link>
 
 			<button className={styles.menu_btn} onClick={() => setMenu(true)}>
