@@ -3,7 +3,7 @@
 import styles from "./SiteHeader.module.css";
 
 import Image from "next/image";
-import Logo from "/ttoil/public/logo.png";
+import Logo from "./../../../public/logo.png";
 import Link from "next/link";
 import ModalHeader from "./ModalHeader/ModalHeader";
 import { useState } from "react";
