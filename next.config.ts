@@ -7,4 +7,5 @@ const nextConfig: NextConfig = {
 	assetPrefix: "/ttoil",
 };
 
+module.exports = nextConfig;
 export default nextConfig;
